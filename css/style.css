@@ -1,0 +1,207 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(at center, #FEFFFF, #b7eeea);
+    height: 100%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(15, 211, 178, 0.2);
+    box-shadow: 0 0 10px rgba(42, 70, 71, 0.2);
+    padding: 6px 15px;
+}
+.logo {
+    cursor: pointer;
+}
+
+.btn {
+    padding: 20px 40px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: linear-gradient(to top, #b0dddb 50%, #e8fffe 92%, #b5ebec 100%);
+    font-family: 'Dosis', monospace;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px -6px rgba(34, 60, 80, 0.18);
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: linear-gradient(to top, #08dbd1 50%, #e8fffe 92%, #b5ebec 100%);
+}
+
+.btn.login {
+    position: absolute;
+    box-sizing: border-box;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-wrapper {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(at center, #FEFFFF, #A7CECC);
+}
+
+.modal-wrapper::after{
+    font-family: Arial, Helvetica, sans-serif;
+    content: 'X';
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.login-form, .form-create-user {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0;
+    background-color: rgba(176,221,219, 0.2);
+    border-radius: 4px;
+}
+
+input, select, textarea{
+    margin-bottom: 10px;
+    padding: 10px 20px 10px 10px;
+    font-family: 'Dosis', monospace;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(176,221,219, 0.4);
+    box-shadow:  5px 5px 5px -5px rgba(122, 190, 179, 0.6) inset;
+    transition: box-shadow .5s ease;
+    border-radius: 4px;
+    color: rgba(32, 75, 68, 0.7)
+}
+
+input:focus, select:focus, textarea:focus {
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.form-title{
+    font-family: 'Dosis', monospace;
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
+    color: transparent;
+    background: #82bbbb;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(190, 190, 190, 0.5);
+}
+
+.login-btn{
+    padding: 10px 20px;
+}
+
+.filter-wrapper {
+    margin: 20px 0 20px 88px;
+    display: flex;
+    align-items: center;
+}
+
+.search-input, .status-search, .order-search{
+    margin-bottom: 0;
+    margin-right: 12px;
+}
+
+.search-input{
+    padding: 11px 87px 11px 11px;
+    margin-right: 15px;
+}
+
+.status-search {
+    padding: 10px 20px 10px 10px;
+}
+
+.order-search {
+    padding: 10px 20px 10px 10px;
+}
+
+.reset, .search {
+    margin: 0 5px 0 10px;
+    padding: 11px 30px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 55px;
+}
+
+ul {
+    padding: 0;
+    margin: 10px;
+    list-style-type: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+ul li:first-child {
+    padding-top: 10px;
+    border-radius: 4px 4px 0 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+li {
+    background-color: rgba(163, 233, 229, 0.5);;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    color:rgb(32, 46, 44);
+}
+
+.hidden, .bd-id{
+    display: none;
+}
+
+.card-list__btn {
+    border-radius: 0 0 4px 4px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0px 7px 9px -7px rgba(34, 60, 80, 0.4);
+}
+
+.redact, .close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 7px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    outline: none;
+    border: none;
+}
+
+.redact {
+    top: 20px;
+    padding: 5px 5px;
+}
