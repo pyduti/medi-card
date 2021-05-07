@@ -1,5 +1,5 @@
 import Btn from "../Elements/ElementBtn.js"
-
+import CardRed from "./CardRed.js"
 export default class CardList{
     static async deletCard(id){
         await fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
@@ -32,13 +32,16 @@ export default class CardList{
                 this.li = document.createElement('li')
                 if (prop === 'id') {
                     this.li.classList.add('bd-id')
+                    this.li.dataset.value = prop
                     this.li.textContent = `${elements[prop]}`
                     this.ul.append(this.li, this.btn, this.btnRedact, this.btnDelet)
                 } else if (prop === 'doctor' || prop === 'fio'){
+                    this.li.dataset.value = prop
                     this.li.classList.add(`short-card-info`)
                     this.li.textContent = `${elements[prop]}`
                     this.ul.append(this.li, this.btn, this.btnRedact, this.btnDelet)
                 } else {
+                    this.li.dataset.value = prop
                     this.li.classList.add('hidden')
                     this.li.textContent = `${elements[prop]}`
                     this.ul.append(this.li, this.btn, this.btnRedact, this.btnDelet)
@@ -73,6 +76,15 @@ export default class CardList{
                 })
             }
         })
+        this.btnRedact.addEventListener('click', (e) => {
+            let arrayCorect = [];
+            e.target.parentElement.childNodes.forEach(el => {
+                if (el.dataset.value){
+                    arrayCorect.push(el)
+                }
+            })
+            CardRed.create(arrayCorect)
+           })
             this.self.append(this.ul)
         })
         this.self.classList.add(`card-wrapper`)
