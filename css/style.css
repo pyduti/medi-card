@@ -70,7 +70,7 @@ header {
     cursor: pointer;
 }
 
-.login-form, .form-create-user {
+.login-form, .form-create-user, .redac-form {
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
