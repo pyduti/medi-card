@@ -10,8 +10,6 @@ export default class CardList{
             })
         window.location.reload()
     }
-
-
     static async create(){
         const array = await fetch("https://ajax.test-danit.com/api/v2/cards", {
         method: 'GET',
@@ -22,6 +20,13 @@ export default class CardList{
         .then(response => response.json())
         .then(response => response)
         this.self = document.createElement('div');
+        if (array.length === 0){
+            this.p = document.createElement('p')
+            this.p.textContent = `No items`
+            this.p.className = `no-items-added`
+            this.self.append(this.p)
+            return this.self;
+        }
         array.forEach(elements => {
             this.ul = document.createElement('ul')
             this.btn = Btn.create(`button`, `btn card-list__btn`, `Show more`)

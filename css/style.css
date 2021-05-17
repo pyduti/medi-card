@@ -206,3 +206,15 @@ li {
     top: 20px;
     padding: 5px 5px;
 }
+
+.no-item {
+    justify-content: center;
+    align-items: center;
+}
+
+.no-items-added {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 44px;
+    color: grey;
+}

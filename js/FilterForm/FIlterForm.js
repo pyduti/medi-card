@@ -30,6 +30,14 @@ export default class FilterForm{
             e.target.parentElement.nextSibling.remove()
             this.self = document.createElement('div')
             this.self.classList.add('card-wrapper')
+            if (filter.length === 0) {
+                this.self.classList.add('no-item')
+                this.p = document.createElement('p')
+                this.p.textContent = `No items`
+                this.p.className = `no-items-added`
+                this.self.append(this.p)
+                return document.querySelector('main').append(this.self);
+            }
             document.querySelector('main').append(this.self)
             filter.forEach(elements => {
                 this.ul = document.createElement('ul')
